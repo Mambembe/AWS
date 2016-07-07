@@ -99,7 +99,7 @@ except:
 try:
     file_name = 'Results_' + str(table_name) + '.txt'
 
-    f = open(path + file_name, "w")
+    f = open("./" + file_name, "w")
     f.write('----------- Test Results for ' + table_name + ' -----------\n\n')
     f.write('Columns : \n%s\n\n' %header)
     f.write('Saved columns:\n%s\n\n' %header_final)
