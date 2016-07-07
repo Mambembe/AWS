@@ -40,7 +40,7 @@ header1 = temp1.split(',')
 
 temp2 = table2.first()
 table2 = table2.filter(lambda x:x != temp2)
-header = temp2.split(',')
+header2 = temp2.split(',')
 
 
 data_extract = table1.map(lambda line: (line.split(','))) \
@@ -55,5 +55,8 @@ data_extract2 = table2.map(lambda line: (line.split(','))) \
 
 both_rdd = data_extract.join(data_extract2)
 both_rdd.take(10)
+
+print(header1)
+print(header2)
 
 
