@@ -78,4 +78,4 @@ prova = sqlContext.sql("""
 """)
 
 
-(prova.rdd).saveAsTextFile('s3n://bigdives3/DataClean/')
+(prova.rdd).saveAsTextFile('s3n://bigdives3/DataClean/Join_query')
