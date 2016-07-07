@@ -44,9 +44,9 @@ header = temp2.split(',')
 
 
 data_extract = table1.map(lambda line: (line.split(','))) \
-    .filter(lambda line: len(line) == len(header))\
-    .map(lambda line: (line[0], line[2]))\
-    .reduceByKey(lambda x, y: x or y).cache()
+    .filter(lambda line: len(line) == len(header))#\
+    #.map(lambda line: (line[0], line[2]))\
+    #.reduceByKey(lambda x, y: x or y).cache()
 
 data_extract2 = table2.map(lambda line: (line.split(','))) \
     .filter(lambda line: len(line) == len(header))\
