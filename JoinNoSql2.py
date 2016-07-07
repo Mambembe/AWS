@@ -22,8 +22,6 @@ from pyspark.sql import Row
 # --------------------------------------------------------------------
 tableName1 = 'dbo.shop.header.droppedhard'
 tableName2 = 'dbo.shop.STAT_storico_dett.droppedhard'
-query_folder = 'query'
-columnsIndex = [0,5]
 # --------------------------------------------------------------------
 
 sc = pyspark.SparkContext()
@@ -47,17 +45,17 @@ data_extract = table1.map(lambda line: (line.split(','))) \
     .filter(lambda line: len(line) == len(header))#\
     #.map(lambda line: (line[0], line[2]))\
     #.reduceByKey(lambda x, y: x or y).cache()
-
+'''
 data_extract2 = table2.map(lambda line: (line.split(','))) \
     .filter(lambda line: len(line) == len(header))\
     .map(lambda line: (line[0], str(line[4])+str(line[5])+str(line[6])))\
     .reduceByKey(lambda x, y: x or y).cache()
-
+'''
 #both_rdd = data_extract.join(data_extract2)
 #both_rdd.take(10)
 
 #both_rdd = data_extract
 
 
-data_extract.saveAsTextFile('s3n://bigdives3/DataClean/Join_query.txt')
+data_extract.saveAsTextFile('s3n://bigdives3/DataClean/Join_query')
 
