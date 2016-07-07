@@ -57,6 +57,7 @@ data_extract2 = table2.map(lambda line: (line.split(','))) \
 #both_rdd.take(10)
 
 both_rdd = data_extract
+both_rdd = both.rdd.take(10)
 
 both_rdd.saveAsTextFile('s3n://bigdives3/DataClean/Join_query')
 
