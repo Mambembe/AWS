@@ -25,8 +25,8 @@ You have to choose
     - Name of the table you want to load (requires cvs extension)
     - Name of the folder where you want your new csv (it will return an error if the folder already exists)
 '''
-table_name1 = 'dbo.shop.header_test.dropped'
-table_name2 = 'dbo.shop.STAT_storico_dett_test.dropped'
+table_name1 = 'dbo.shop.header.droppedhard'
+table_name2 = 'dbo.shop.STAT_storico_dett.droppedhard'
 query_folder1 = 'query_Card'
 query_folder2 = 'query_Storico'
 # --------------------------------------------------------------------
