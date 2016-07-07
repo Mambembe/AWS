@@ -26,8 +26,9 @@ from pyspark.sql.types import *
 from pyspark.sql import Row
 
 # --------------------------------------------------------------------
-path = 's3n://bigdives3/DataClean/' + table_name + '.csv'
 table_name = 'dbo.shop.header.droppedhard'
+path = 's3n://bigdives3/DataClean/' + table_name + '.csv'
+
 columnsIndex = 0#range(0,10)
 saving = False
 # --------------------------------------------------------------------
