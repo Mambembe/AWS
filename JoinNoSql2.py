@@ -56,7 +56,5 @@ data_extract2 = table2.map(lambda line: (line.split(','))) \
 
 #both_rdd = data_extract
 
-print '------------------------' + str(data_extract.count())
-
-#data_extract.saveAsTextFile('s3n://bigdives3/DataClean/Join_query')
+data_extract.saveAsTextFile('s3n://bigdives3/DataClean/Join_query')
 
