@@ -30,8 +30,8 @@ sc = pyspark.SparkContext()
 path1 = 's3n://bigdives3/DataClean/' + tableName1 + '.csv'
 path2 = 's3n://bigdives3/DataClean/' + tableName2 + '.csv'
 
-table1 = sc.textFile(path1).cache()
-table2 = sc.textFile(path2).cache()
+table1 = sc.textFile(path1)
+table2 = sc.textFile(path2)
 
 # Divides Header from Table
 temp1 = table1.first()
@@ -46,12 +46,12 @@ header = temp2.split(',')
 data_extract = table1.map(lambda line: (line.split(','))) \
     .filter(lambda line: len(line) == len(header))\
     .map(lambda line: (line[0], line[2]))\
-    .reduceByKey(lambda x, y: x or y)
+    .reduceByKey(lambda x, y: x or y).cache()
 
 data_extract2 = table2.map(lambda line: (line.split(','))) \
     .filter(lambda line: len(line) == len(header))\
     .map(lambda line: (line[0], str(line[4])+str(line[5])+str(line[6])))\
-    .reduceByKey(lambda x, y: x or y)
+    .reduceByKey(lambda x, y: x or y).cache()
 
 #both_rdd = data_extract.join(data_extract2)
 #both_rdd.take(10)
