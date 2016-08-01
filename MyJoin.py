@@ -12,8 +12,8 @@ sys.path.append('/root/spark/python/')
 
 sc = pyspark.SparkContext()
 
-table1 = sc.textFile('s3n://bigdives3/DataClean/dbo.shop.header.droppedhard.csv')
-#table2 = sc.textFile('s3n://bigdives3/DataClean/DataClean/dbo.shop.STAT_storico_dett.droppedhard.csv')
+#table1 = sc.textFile('s3n://bigdives3/DataClean/dbo.shop.header.droppedhard.csv')
+table2 = sc.textFile('s3n://bigdives3/DataClean/DataClean/dbo.shop.STAT_storico_dett.droppedhard.csv')
 
 #table1.take(10).saveAsTextFile('s3n://bigdives3/DataClean/Join_query')
 #print '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ecce !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
@@ -29,8 +29,8 @@ def ExtractHeader(table):
     #print header 
     return table, header
 
-table1, header1 = ExtractHeader(table1)
-#table2, header2 = ExtractHeader(table2)
+#table1, header1 = ExtractHeader(table1)
+table2, header2 = ExtractHeader(table2)
 '''
 def SanityCheck(table, header):
     data_extract = table.map(lambda line: (line.split(','))) \
@@ -51,4 +51,4 @@ aaa = data_extract.filter(lambda line: line == '19782')
 #print frequencies.take(10)
 '''
 #data_extract = table1.map(lambda line: line[2])
-header1.saveAsTextFile('s3n://bigdives3/DataClean/Join_query')
+#header1.saveAsTextFile('s3n://bigdives3/DataClean/Join_query')
