@@ -29,28 +29,32 @@ def ExtractHeader(table):
     #print header 
     return table, header
 
-print '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
-print table2.take(6)
+
 #table1, header1 = ExtractHeader(table1)
 #table2, header2 = ExtractHeader(table2)
-'''
-def SanityCheck(table, header):
+
+def SanityCheck(table):
     data_extract = table.map(lambda line: (line.split(','))) \
-    .filter(lambda line: len(line) == len(header))
+    .filter(lambda line: len(line) == 7)
     #print '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
     #print 'Columns number: ', data_extract.count()
     return data_extract
 
 #table1 = SanityCheck(table1, header1)
-#table2 = SanityCheck(table2, header2)
+table2 = SanityCheck(table2)
+
+print '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
+print table2.take(6)
+
+
 
 #data_extract = table2.map(lambda line: line[4]+line[5]+line[6])
-data_extract = table2.map(lambda line: ''.join(re.findall('\d+', line[4]+line[5]+line[6] )))\
-                    .map(lambda line: line[0:5])
-aaa = data_extract.filter(lambda line: line == '19782')
+#data_extract = table2.map(lambda line: ''.join(re.findall('\d+', line[4]+line[5]+line[6] )))\
+#                    .map(lambda line: line[0:5])
+#aaa = data_extract.filter(lambda line: line == '19782')
 #aaa = data_extract.filter(lambda line: line == '19782')
 #frequencies = data_extract.map(lambda w: (w, 1)).reduceByKey(lambda v1,v2: v1+v2)
 #print frequencies.take(10)
-'''
+
 #data_extract = table1.map(lambda line: line[2])
 #header1.saveAsTextFile('s3n://bigdives3/DataClean/Join_query')
