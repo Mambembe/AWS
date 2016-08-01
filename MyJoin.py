@@ -33,18 +33,18 @@ def ExtractHeader(table):
 #table1, header1 = ExtractHeader(table1)
 #table2, header2 = ExtractHeader(table2)
 
-def SanityCheck(table):
+def SanityCheck(table, header):
     data_extract = table.map(lambda line: (line.split(','))) \
-    .filter(lambda line: len(line) == 7)
+    .filter(lambda line: len(line) == len(header))
     #print '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
     #print 'Columns number: ', data_extract.count()
     return data_extract
 
 #table1 = SanityCheck(table1, header1)
-table2 = SanityCheck(table2)
+#table2 = SanityCheck(table2)
 
 print '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
-print table2.take(6)
+print table1.take(6)
 
 
 
