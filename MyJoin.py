@@ -8,7 +8,7 @@ import pandas as pd
 
 SPARK_HOME = '/root/spark/'
 os.environ['SPARK_HOME'] = os.path.join(SPARK_HOME)
-sys.path.append('/root/spark/python/')
+#sys.path.append('/root/spark/python/')
 
 sc = pyspark.SparkContext()
 
