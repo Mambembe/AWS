@@ -2,7 +2,7 @@
 import re
 import pyspark
 
-pyspark.SparkContext()
+sc = pyspark.SparkContext()
 
 table1 = sc.textFile('s3n://bigdives3/DataClean/dbo.shop.header.droppedhard.csv')
 table2 = sc.textFile('s3n://bigdives3/DataClean/DataClean/dbo.shop.STAT_storico_dett.droppedhard.csv')
