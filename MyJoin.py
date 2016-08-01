@@ -41,7 +41,7 @@ def SanityCheck(table, header):
     return data_extract
 
 #table1 = SanityCheck(table1, header1)
-table2 = SanityCheck(table2, header1)
+table2 = SanityCheck(table2, header2)
 
 #print '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
 #print table2.take(6)
