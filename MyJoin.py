@@ -8,7 +8,7 @@ import pandas as pd
 
 SPARK_HOME = '/root/spark/'
 os.environ['SPARK_HOME'] = os.path.join(SPARK_HOME)
-#sys.path.append('/root/spark/python/')
+sys.path.append('/root/spark/python/')
 
 sc = pyspark.SparkContext()
 
@@ -19,7 +19,7 @@ table1 = sc.textFile('s3n://bigdives3/DataClean/dbo.shop.header.droppedhard.csv'
 print '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ecce !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
 data = sc.parallelize([1,2,3,4,5,6])
 print data
-#print table1.take(1)
+print table1.take(1)
 
 '''
 def ExtractHeader(table):
