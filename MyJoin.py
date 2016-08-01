@@ -28,9 +28,9 @@ def ExtractHeader(table):
     #print '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
     #print header 
     return table, header
-
+print '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
 #table1, header1 = ExtractHeader(table1)
-table2, header2 = ExtractHeader(table2)
+#table2, header2 = ExtractHeader(table2)
 '''
 def SanityCheck(table, header):
     data_extract = table.map(lambda line: (line.split(','))) \
