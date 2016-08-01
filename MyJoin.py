@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 import re
 
+pyspark.SparkContext()
+
 table1 = sc.textFile('s3n://bigdives3/DataClean/dbo.shop.header.droppedhard.csv')
 table2 = sc.textFile('s3n://bigdives3/DataClean/DataClean/dbo.shop.STAT_storico_dett.droppedhard.csv')
 
