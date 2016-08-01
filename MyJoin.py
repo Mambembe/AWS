@@ -21,7 +21,7 @@ table2 = sc.textFile('s3n://bigdives3/DataClean/DataClean/dbo.shop.STAT_storico_
 #print data
 #print table1.take(10)
 print '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
-print table2.first()
+print table1.first()
 
 '''
 def ExtractHeader(_table):
