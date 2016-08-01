@@ -22,7 +22,7 @@ table2 = sc.textFile('s3n://bigdives3/DataClean/DataClean/dbo.shop.STAT_storico_
 #print table1.take(10)
 
 def ExtractHeader(table):
-    temp = table.first()
+    temp = table.take(1)
     table = table.filter(lambda x:x !=temp)
     header = temp.split(',')
     #print '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
