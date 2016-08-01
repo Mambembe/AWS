@@ -47,4 +47,4 @@ aaa = data_extract.filter(lambda line: line == '33949')
 #print frequencies.take(10)
 
 #data_extract = table1.map(lambda line: line[2])
-aaa.saveAsTextFile('s3n://bigdives3/DataClean/Join_query')
+aaa.saveAsTextFile('s3n://bigdives3/DataClean/Join_query2')
