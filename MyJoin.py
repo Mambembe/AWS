@@ -19,9 +19,11 @@ table2 = sc.textFile('s3n://bigdives3/DataClean/DataClean/dbo.shop.STAT_storico_
 #print '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ecce !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
 #data = sc.parallelize([1,2,3,4,5,6])
 #print data
-#print table1.take(1)
+print table1.take(10)
+print '!!!!!!!!!!!!!!!!!!!!!!'
+print table2.take(10)
 
-
+'''
 def ExtractHeader(table):
     temp = table.first()
     table = table.filter(lambda x:x !=temp)
@@ -46,6 +48,6 @@ data_extract = table2.map(lambda line: ''.join(re.findall('\d+', line[4]+line[5]
 #aaa = data_extract.filter(lambda line: line == '19782')
 frequencies = data_extract.map(lambda w: (w, 1)).reduceByKey(lambda v1,v2: v1+v2)
 frequencies.take(10)
-
+'''
 
 #saveAsTextFile('s3n://bigdives3/DataClean/Join_query')
