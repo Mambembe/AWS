@@ -17,6 +17,8 @@ table1 = sc.textFile('s3n://bigdives3/DataClean/dbo.shop.header.droppedhard.csv'
 
 #table1.take(10).saveAsTextFile('s3n://bigdives3/DataClean/Join_query')
 print '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ecce !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
+print table1.first()
+
 '''
 def ExtractHeader(table):
     temp = table.first()
