@@ -24,12 +24,12 @@ table2 = sc.textFile('s3n://bigdives3/DataClean/DataClean/dbo.shop.STAT_storico_
 #print table2.take(10)
 
 
-def ExtractHeader(table):
-    temp = table.first()
-    table = table.filter(lambda x:x !=temp).cache()
+def ExtractHeader(_table):
+    temp = _table.first()
+    table = _table.filter(lambda x:x !=temp).cache()
     header = temp.split(',')
-    #print '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
-    #print header 
+    print '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
+    print header 
     return table, header
 
 table1, header1 = ExtractHeader(table1)
