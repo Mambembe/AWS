@@ -20,9 +20,9 @@ table2 = sc.textFile('s3n://bigdives3/DataClean/DataClean/dbo.shop.STAT_storico_
 #data = sc.parallelize([1,2,3,4,5,6])
 #print data
 #print table1.take(10)
-print '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
-print table1.first()
-
+print '!!!!!!!!!!!!!!!!!!!!'
+print table1.take(10)
+print '!!!!!!!!!!!!!!!!!!!!'
 '''
 def ExtractHeader(_table):
     temp = _table.first()
