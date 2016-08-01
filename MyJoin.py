@@ -28,7 +28,9 @@ def ExtractHeader(table):
     #print '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
     #print header 
     return table, header
+
 print '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
+print table2.take(6)
 #table1, header1 = ExtractHeader(table1)
 #table2, header2 = ExtractHeader(table2)
 '''
