@@ -26,7 +26,7 @@ table2 = sc.textFile('s3n://bigdives3/DataClean/DataClean/dbo.shop.STAT_storico_
 
 def ExtractHeader(table):
     temp = table.first()
-    table = table.filter(lambda x:x !=temp)
+    table = table.filter(lambda x:x !=temp).cache()
     header = temp.split(',')
     #print '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
     #print header 
@@ -42,15 +42,15 @@ def SanityCheck(table, header):
     #print 'Columns number: ', data_extract.count()
     return data_extract
 
-table1 = SanityCheck(table1, header1)
-table2 = SanityCheck(table2, header2)
+#table1 = SanityCheck(table1, header1)
+#table2 = SanityCheck(table2, header2)
 
 data_extract = table2.map(lambda line: line[4]+line[5]+line[6])
 data_extract = table2.map(lambda line: ''.join(re.findall('\d+', line[4]+line[5]+line[6] )))
 
 #aaa = data_extract.filter(lambda line: line == '19782')
 frequencies = data_extract.map(lambda w: (w, 1)).reduceByKey(lambda v1,v2: v1+v2)
-#frequencies.take(10)
+print frequencies.take(10)
 
 
-frequencies.saveAsTextFile('s3n://bigdives3/DataClean/Join_query')
+#frequencies.saveAsTextFile('s3n://bigdives3/DataClean/Join_query')
