@@ -2,6 +2,13 @@
 # -*- coding: utf-8 -*-
 import re
 import pyspark
+import sys
+import os
+import pandas as pd
+
+SPARK_HOME = '/root/spark/'
+os.environ['SPARK_HOME'] = os.path.join(SPARK_HOME)
+sys.path.append('/root/spark/python/')
 
 sc = pyspark.SparkContext()
 
@@ -35,3 +42,5 @@ data_extract = table2.map(lambda line: ''.join(re.findall('\d+', line[4]+line[5]
 frequencies = data_extract.map(lambda w: (w, 1)).reduceByKey(lambda v1,v2: v1+v2)
 frequencies.take(10)
 '''
+
+saveAsTextFile('s3n://bigdives3/DataClean/Join_query')
