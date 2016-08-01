@@ -49,5 +49,5 @@ def SanityCheck(table, header):
 #frequencies = data_extract.map(lambda w: (w, 1)).reduceByKey(lambda v1,v2: v1+v2)
 #print frequencies.take(10)
 
-data_extract = table2.map(lambda line: line[2])
+data_extract = table1.map(lambda line: line[2])
 data_extract.saveAsTextFile('s3n://bigdives3/DataClean/Join_query')
