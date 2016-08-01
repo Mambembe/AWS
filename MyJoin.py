@@ -13,7 +13,7 @@ sys.path.append('/root/spark/python/')
 sc = pyspark.SparkContext()
 
 table1 = sc.textFile('s3n://bigdives3/DataClean/dbo.shop.header.droppedhard.csv').cache()
-table2 = sc.textFile('s3n://bigdives3/DataClean/DataClean/dbo.shop.STAT_storico_dett.droppedhard.csv')
+#table2 = sc.textFile('s3n://bigdives3/DataClean/DataClean/dbo.shop.STAT_storico_dett.droppedhard.csv')
 
 #table1.take(10).saveAsTextFile('s3n://bigdives3/DataClean/Join_query')
 #print '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ecce !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
@@ -21,7 +21,7 @@ table2 = sc.textFile('s3n://bigdives3/DataClean/DataClean/dbo.shop.STAT_storico_
 #print data
 print table1.take(10)
 print '!!!!!!!!!!!!!!!!!!!!!!'
-print table2.take(10)
+#print table2.take(10)
 
 '''
 def ExtractHeader(table):
