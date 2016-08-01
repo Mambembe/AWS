@@ -12,8 +12,8 @@ sys.path.append('/root/spark/python/')
 
 sc = pyspark.SparkContext()
 
-table1 = sc.textFile('s3n://bigdives3/DataClean/dbo.shop.header.droppedhard.csv')
-#table2 = sc.textFile('s3n://bigdives3/DataClean/DataClean/dbo.shop.STAT_storico_dett.droppedhard.csv')
+#table1 = sc.textFile('s3n://bigdives3/DataClean/dbo.shop.header.droppedhard.csv')
+table2 = sc.textFile('s3n://bigdives3/DataClean/DataClean/dbo.shop.STAT_storico_dett.droppedhard.csv')
 
 #table1.take(10).saveAsTextFile('s3n://bigdives3/DataClean/Join_query')
 #print '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ecce !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
@@ -44,7 +44,7 @@ def SanityCheck(table, header):
 #table2 = SanityCheck(table2)
 
 print '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
-print table1.take(6)
+print table2.take(6)
 
 
 
