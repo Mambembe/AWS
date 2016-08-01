@@ -16,7 +16,7 @@ table1 = sc.textFile('s3n://bigdives3/DataClean/dbo.shop.header.droppedhard.csv'
 #table2 = sc.textFile('s3n://bigdives3/DataClean/DataClean/dbo.shop.STAT_storico_dett.droppedhard.csv')
 
 #table1.take(10).saveAsTextFile('s3n://bigdives3/DataClean/Join_query')
-print 'ecce'
+print '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ecce !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
 '''
 def ExtractHeader(table):
     temp = table.first()
@@ -44,4 +44,4 @@ frequencies = data_extract.map(lambda w: (w, 1)).reduceByKey(lambda v1,v2: v1+v2
 frequencies.take(10)
 '''
 
-saveAsTextFile('s3n://bigdives3/DataClean/Join_query')
+#saveAsTextFile('s3n://bigdives3/DataClean/Join_query')
