@@ -28,6 +28,7 @@ def ExtractHeader(table):
     temp = table.first()
     table = table.filter(lambda x:x !=temp)
     header = temp.split(',')
+    print '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
     print header 
     return table, header
 
@@ -37,6 +38,7 @@ table1, header1 = ExtractHeader(table1)
 def SanityCheck(table, header):
     data_extract = table.map(lambda line: (line.split(','))) \
     .filter(lambda line: len(line) == len(header))
+    print '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
     print 'Columns number: ', data_extract.count()
     return data_extract
 
